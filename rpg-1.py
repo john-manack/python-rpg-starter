@@ -9,7 +9,7 @@ class Character:
     
     def attack(self, enemy):
         enemy.health -= self.power
-        print("%s does %d damage to the %s." % (self.name, self.power, enemy.name))
+        print("%s does %d damage to %s." % (self.name, self.power, enemy.name))
         if enemy.health <= 0:
             print("%s is dead" % enemy.name)
     

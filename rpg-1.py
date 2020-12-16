@@ -1,3 +1,4 @@
+import random
 class Character:
     def __init__(self, name, health=0, power=0):
         self.name = name
@@ -16,8 +17,15 @@ class Character:
 class Hero(Character):
     def attack(self, enemy):
         # Hero attacks goblin
-        enemy.health -= self.power
-        print("You do %d damage to the goblin." % self.power)
+        rand_num1 = random.randrange(1,10)
+        if rand_num1 <= 2:
+            enemy.health -= (self.power * 2)
+        else:
+            enemy.health -= self.power
+        if rand_num1 <= 2:
+            print("You do %d damage to the goblin." % (self.power * 2))
+        else:
+            print("You do %d damage to the goblin." % self.power)
         if enemy.health <= 0:
             print("The goblin is dead.")
 
